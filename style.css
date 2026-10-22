@@ -1,10 +1,10 @@
 :root {
-  --ink: #20231f;
-  --muted: #70746c;
-  --paper: #f7f6f1;
-  --line: #dedfd7;
-  --green: #365b46;
-  --lime: #d8e45b;
+  --ink: #20271f;
+  --muted: #626b60;
+  --paper: #f8f6ed;
+  --line: #d7dbcf;
+  --green: #2f6847;
+  --lime: #d9e83d;
   --radius-card: 0;
   --radius-pill: 999px;
   --radius-pill: 0;
@@ -45,7 +45,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #eeeee7;
+  background: #ebeee3;
   border-right: 1px solid var(--line);
 }
 .side-brand .brand-mark {
@@ -76,7 +76,7 @@ a {
   gap: 5px;
   padding: 12px 7px;
   border-left: 2px solid transparent;
-  color: #656b62;
+  color: #4f5d50;
   font-size: 9px;
   line-height: 1.3;
   transition:
@@ -92,7 +92,7 @@ a {
 .side-nav a:hover,
 .side-nav a:focus-visible {
   color: var(--green);
-  background: #e4e7dc;
+  background: #dfe8d6;
   border-left-color: var(--green);
 }
 .side-panel-foot {
@@ -163,8 +163,8 @@ a {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background: #7a9d74;
-  box-shadow: 0 0 0 4px #7a9d741a;
+  background: #4f8c5b;
+  box-shadow: 0 0 0 4px #4f8c5b24;
 }
 .hero h1 {
   font-size: clamp(42px, 5vw, 66px);
@@ -355,7 +355,7 @@ a {
   position: relative;
   height: 390px;
   overflow: hidden;
-  background: #e2e2d9;
+  background: #dce3d5;
 }
 .city-story-visual img {
   display: block;
@@ -448,7 +448,7 @@ a {
   height: 240px;
   position: relative;
   overflow: hidden;
-  background: #d7d8cd;
+  background: #d9e0d1;
 }
 .route-main .route-photo {
   height: 240px;
@@ -508,7 +508,7 @@ a {
   color: var(--green);
 }
 .guide-section {
-  background: #e9ebe3;
+  background: #e5ebdf;
   padding: 110px 8%;
   margin-left: 86px;
 }
@@ -553,7 +553,7 @@ a {
   display: flex;
   gap: 40px;
   padding: 24px 0 14px;
-  border-top: 1px solid #d0d4c8;
+  border-top: 1px solid #c9d4c3;
   margin-top: 25px;
 }
 .guide-stats div {
@@ -595,14 +595,14 @@ a {
   color: var(--ink);
 }
 .button-light:hover {
-  background: #cbd747;
+  background: #cbdc2c;
 }
 .booking-spark {
   position: absolute;
   right: 17%;
   top: 26%;
   font-size: 33px;
-  color: #b7c23e;
+  color: #93a91e;
 }
 footer {
   min-height: 85px;
@@ -847,5 +847,175 @@ footer .copyright {
   .guide-section {
     padding-right: 5%;
     padding-left: 5%;
+  }
+}
+
+/* Editorial contrast and destination-led visual rhythm */
+.hero {
+  background: linear-gradient(
+    110deg,
+    #f8f6ed 0%,
+    #f8f6ed 58%,
+    #edf0e3 58%,
+    #edf0e3 100%
+  );
+}
+.hero-art {
+  box-shadow: 14px 14px 0 #d5e0c9;
+}
+.hero-art::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+.hero-art > img {
+  object-position: center;
+}
+.city-story {
+  position: relative;
+}
+.city-story-visual {
+  box-shadow: -14px 14px 0 #d5e0c9;
+}
+.routes {
+  position: relative;
+  isolation: isolate;
+  padding-top: 100px;
+}
+.routes::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 35px;
+  left: -3.5%;
+  right: -3.5%;
+  background: #eef0e4;
+}
+.route-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 18px;
+}
+.route-card {
+  position: relative;
+}
+.route-main {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.route-main .route-photo {
+  height: 310px;
+}
+.route-photo {
+  height: 225px;
+}
+.route-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(32, 35, 31, 0.12);
+  pointer-events: none;
+}
+.route-info {
+  min-height: 112px;
+}
+.photo-count {
+  z-index: 1;
+  background: var(--green);
+  padding: 8px 11px;
+}
+.guide-section {
+  position: relative;
+  background: #e2eadc;
+}
+.guide-photo {
+  box-shadow: 14px 14px 0 #cbd9c3;
+}
+.guide-photo-label {
+  background: var(--ink);
+  color: #fff;
+}
+.booking {
+  margin-top: 74px;
+  margin-bottom: 74px;
+  padding: 82px 28px;
+  background: var(--ink);
+  color: var(--paper);
+}
+.booking-kicker,
+.booking > p {
+  color: #d2d6c9;
+}
+.booking-spark {
+  color: var(--lime);
+}
+.button-light {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    background: var(--paper);
+  }
+  .route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .route-main {
+    grid-column: span 2;
+  }
+  .route-main .route-photo {
+    height: 280px;
+  }
+  .route-photo {
+    height: 210px;
+  }
+  .routes::before {
+    left: -5%;
+    right: -5%;
+  }
+}
+@media (max-width: 640px) {
+  .hero-art {
+    box-shadow: 7px 7px 0 #d5e0c9;
+  }
+  .hero-art::before {
+    inset: 8px;
+  }
+  .city-story-visual {
+    box-shadow: -7px 7px 0 #d5e0c9;
+  }
+  .routes {
+    padding-top: 72px;
+  }
+  .routes::before {
+    left: -6%;
+    right: -6%;
+    bottom: 25px;
+  }
+  .route-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .route-main {
+    grid-column: auto;
+  }
+  .route-photo,
+  .route-main .route-photo {
+    height: auto;
+    aspect-ratio: 1.28 / 1;
+  }
+  .route-info {
+    min-height: 0;
+  }
+  .booking {
+    margin-top: 46px;
+    margin-bottom: 46px;
+    padding: 66px 18px;
+  }
+  .guide-photo {
+    box-shadow: 7px 7px 0 #cbd9c3;
   }
 }
