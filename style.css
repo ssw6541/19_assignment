@@ -109,13 +109,9 @@ a {
 .brand-mark {
   width: 31px;
   height: 31px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: -0.07em;
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 .topbar nav {
   display: flex;
@@ -681,7 +677,9 @@ footer .copyright {
     scroll-padding-top: 12px;
     scroll-padding-left: 0;
   }
-  .side-panel { display: none; }
+  .side-panel {
+    display: none;
+  }
   .topbar {
     height: 68px;
     padding: 0 5%;
@@ -835,8 +833,19 @@ footer .copyright {
   }
 }
 @media (max-width: 380px) {
-  .topbar .brand { gap: 7px; }
-  .hero { padding-right: 5%; padding-left: 5%; }
-  .section-wrap { margin-right: 5%; margin-left: 5%; }
-  .guide-section { padding-right: 5%; padding-left: 5%; }
+  .topbar .brand {
+    gap: 7px;
+  }
+  .hero {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .section-wrap {
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .guide-section {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 }
