@@ -132,7 +132,7 @@ a {
   font-size: 12px;
   font-weight: 600;
   border: 1px solid #c7c9c0;
-  border-radius: 999px;
+  border-radius: 10px;
   padding: 11px 17px;
 }
 .nav-cta span {
@@ -334,7 +334,7 @@ a {
 }
 .city-story {
   display: grid;
-  grid-template-columns: .82fr 1.18fr;
+  grid-template-columns: 0.82fr 1.18fr;
   align-items: center;
   gap: 8%;
   padding: 0 0 125px;
@@ -346,10 +346,27 @@ a {
   letter-spacing: -0.065em;
   font-weight: 600;
 }
-.city-story-copy h2 em { color: var(--green); font-style: normal; }
-.city-story-copy p { color: #73776f; font-size: 12px; line-height: 2.1; }
-.city-story-visual { position: relative; height: 390px; overflow: hidden; background: #e2e2d9; }
-.city-story-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.city-story-copy h2 em {
+  color: var(--green);
+  font-style: normal;
+}
+.city-story-copy p {
+  color: #73776f;
+  font-size: 12px;
+  line-height: 2.1;
+}
+.city-story-visual {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  background: #e2e2d9;
+}
+.city-story-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .visual-caption {
   position: absolute;
   left: 0;
@@ -358,7 +375,7 @@ a {
   background: var(--paper);
   color: #5f665b;
   font-size: 8px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 .section-label {
   color: #85897f;
@@ -622,9 +639,17 @@ footer .copyright {
   .hero-art {
     height: 390px;
   }
-  .city-story { grid-template-columns: 1fr 1fr; gap: 6%; padding-bottom: 95px; }
-  .city-story-visual { height: 320px; }
-  .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .city-story {
+    grid-template-columns: 1fr 1fr;
+    gap: 6%;
+    padding-bottom: 95px;
+  }
+  .city-story-visual {
+    height: 320px;
+  }
+  .route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .section-wrap {
     margin-left: calc(86px + 6%);
     margin-right: 6%;
@@ -653,100 +678,87 @@ footer .copyright {
 }
 @media (max-width: 640px) {
   html {
+    scroll-padding-top: 12px;
     scroll-padding-left: 0;
   }
-  .side-panel {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: 0;
-    background: transparent;
-  }
-  .side-brand,
-  .side-panel-title,
-  .side-panel-foot {
-    display: none;
-  }
-  .side-nav {
-    position: sticky;
-    z-index: 9;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2px;
-    overflow-x: auto;
-    background: #eeeee7;
-    border-bottom: 1px solid var(--line);
-  }
-  .side-nav a {
-    flex: 0 0 auto;
-    align-items: center;
-    padding: 10px 7px;
-    border-left: 0;
-    border-bottom: 2px solid transparent;
-    font-size: 9px;
-    white-space: nowrap;
-  }
-  .side-nav a span {
-    display: none;
-  }
-  .side-nav a:hover,
-  .side-nav a:focus-visible {
-    border-left-color: transparent;
-    border-bottom-color: var(--green);
-  }
+  .side-panel { display: none; }
   .topbar {
     height: 68px;
-    padding: 0 6%;
+    padding: 0 5%;
     margin-left: 0;
+    position: relative;
   }
   .topbar nav {
     display: none;
   }
   .nav-cta {
-    padding: 9px 12px;
+    padding: 11px 13px;
     font-size: 10px;
+  }
+  .section-wrap {
+    width: auto;
+    max-width: none;
+    margin-left: 6%;
+    margin-right: 6%;
   }
   .hero {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 52px 7% 48px;
-    gap: 38px;
+    min-height: auto;
+    margin: 0;
+    padding: 48px 6% 58px;
+    gap: 30px;
   }
-  .hero h1 {
-    font-size: 43px;
-  }
-  .hero-description {
-    font-size: 12px;
-  }
-  .hero-meta {
-    margin-top: 34px;
+  .hero-description br {
+    display: none;
   }
   .hero-art {
-    height: 340px;
-    margin: 0 5px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.08 / 1;
+    margin: 0;
+  }
+  .image-tag {
+    left: 14px;
+    bottom: 17px;
+  }
+  .image-index {
+    right: 12px;
+    bottom: 18px;
+  }
+  .image-index i {
+    width: 18px;
+    margin: 0 4px;
   }
   .art-stamp {
-    right: -12px;
+    top: 12px;
+    right: 12px;
+    padding: 9px;
   }
   .side-label {
     display: none;
   }
   .intro {
-    padding: 68px 0 75px;
+    padding: 68px 0 76px;
   }
   .intro-content {
     display: block;
     margin: 30px 0 0;
   }
-  .city-story { grid-template-columns: 1fr; gap: 27px; padding-bottom: 78px; }
-  .city-story-copy h2 { font-size: 33px; line-height: 1.38; }
-  .city-story-visual { height: auto; aspect-ratio: 1.25 / 1; }
+  .city-story {
+    grid-template-columns: 1fr;
+    gap: 27px;
+    padding-bottom: 78px;
+  }
+  .city-story-copy h2 {
+    font-size: 33px;
+    line-height: 1.38;
+  }
+  .city-story-visual {
+    height: auto;
+    aspect-ratio: 1.25 / 1;
+  }
   .intro h2,
   .route-heading h2,
   .guide-copy h2,
@@ -757,7 +769,7 @@ footer .copyright {
     margin-top: 24px;
   }
   .routes {
-    padding: 68px 0 78px;
+    padding: 72px 0 82px;
   }
   .route-heading {
     display: block;
@@ -767,28 +779,31 @@ footer .copyright {
   }
   .route-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 32px;
   }
   .route-photo,
   .route-main .route-photo {
-    height: 245px;
+    height: auto;
+    aspect-ratio: 1.28 / 1;
   }
   .route-info {
     padding-top: 14px;
   }
   .guide-section {
-    padding: 55px 7%;
+    margin-left: 0;
+    padding: 64px 6%;
   }
   .guide-inner {
     grid-template-columns: 1fr;
     gap: 33px;
   }
   .guide-photo {
-    height: 300px;
+    height: auto;
+    aspect-ratio: 1.16 / 1;
   }
   .guide-stats {
     justify-content: space-between;
-    gap: 8px;
+    gap: 12px;
   }
   .guide-stats div {
     gap: 6px;
@@ -797,7 +812,7 @@ footer .copyright {
     font-size: 20px;
   }
   .booking {
-    padding: 78px 20px;
+    padding: 78px 6%;
   }
   .booking-spark {
     right: 8%;
@@ -805,6 +820,7 @@ footer .copyright {
     font-size: 24px;
   }
   footer {
+    margin-left: 0;
     padding: 20px 6%;
     flex-wrap: wrap;
     gap: 11px;
@@ -817,4 +833,10 @@ footer .copyright {
     text-align: right;
     margin: 0;
   }
+}
+@media (max-width: 380px) {
+  .topbar .brand { gap: 7px; }
+  .hero { padding-right: 5%; padding-left: 5%; }
+  .section-wrap { margin-right: 5%; margin-left: 5%; }
+  .guide-section { padding-right: 5%; padding-left: 5%; }
 }
